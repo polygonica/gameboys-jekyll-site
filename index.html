@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+    <title>G A M E B O Y S</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="http://player.twitch.tv/js/embed/v1.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+    <script src="index.js"></script>
+    <!-- for ICONS -->
+</head>
+
+<body>
+    <header>
+        <!-- Nav bar component -->
+        <nav id="navbar" class="sticky">
+            <ul id="topnav">
+                <li><a onclick="moveToSection(event);" href="#cover_img"><i class="fas fa-home"></i></a></li>
+                <li><a onclick="moveToSection(event);" href="#home">about us</a></li>
+                <li><a href="https://discord.gg/hv4xfxj" target="_blank">Contact us</a></li>
+<!--                <li><a onclick="moveToSection(event);" href="#gallery">Gallery</a></li>-->
+                <li><a href="https://discord.gg/hv4xfxj" target="_blank">Discord</a></li>
+                <span id="external_links">
+          </span>
+            </ul>
+        </nav>
+        <div class="responsive-bar">
+            <div class="toggleBtn">
+                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="toggleBar();">
+          <i class="fas fa-bars"></i>
+          </a>
+            </div>
+        </div>
+    </header>
+    <section class="cover_img" id="cover_img">
+        <div class="twitch_box">
+            <h1>LIVE ON TWITCH</h1>
+            <div class="video"></div>
+            <div class="button_area" onclick="showBlockB();">
+                <div class="button">
+                    <i class="fab fa-twitch"></i> <i class="fas fa-caret-right"></i>
+                </div>
+            </div>
+        </div>
+        <!-- The first page -->
+        <div class="block1">
+            <div class="gradient"></div>
+            <div class="img"></div>
+            <div class="centered">
+                <div class="titles">
+                    <div class="title back"></div>
+                    <div class="title forward"></div>
+                </div>
+                <div class="bottom_portion">
+                    <div class="games">
+                        <div class="games_item">
+                            <div class="image"></div>
+                        </div>
+                    </div>
+                    <div class="join_button">
+                        <div class="main_button" onclick="window.location = 'https://discord.gg/hv4xfxj'">
+                            <div class="slide1"></div>
+                            <div class="slide2"></div>
+                            <div class="text"><i class="fab fa-discord"></i>&nbsp;JOIN US</div>
+                        </div>
+                        <div class="raw_link">
+                            <span id="discord_link">https://discord.gg/hv4xfxj</span>
+                            <span class="copy_button" onclick="copyLink(event);" style="float: right; cursor: pointer;">
+                <span class="ic">
+                <i class="far fa-copy"></i>
+                </span>
+                            <span id="clone" class="ic">
+                <i class="far fa-copy"></i>
+                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The second page -->
+        <div class="block2">
+            <div class="back_button" onclick="showBlockA();">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="streaming">
+                <div id="video_box"></div>
+                <h1 id="streamer_title"></h1>
+                <div class="more_streamers">
+                    <h1>Faveourite<br> &nbsp; &nbsp; Channels:</h1>
+                    <!--
+              <div class="streamer" onclick="selectStreamer('shroud', 'PUBG');">
+                  <h1>Shroud</h1>
+                  <div class="preview"></div>
+              </div>
+              -->
+                </div>
+            </div>
+            <div class="not_streaming">
+                <h1>No one is streaming...</h1>
+            </div>
+        </div>
+    </section>
+    <!-- cover image -->
+    <section class="half_content" id="home">
+        <div class="block_wrapper">
+            <div class="side_block">
+                <h1>WHO WE ARE</h1>
+                <p>Gameboys is a Canadian community of gamers who play team-oriented games regularly. We are looking for English speaking gamers who play multiplayer games regularly (8+ hours a week). Access to Gameboys is granted through word of mouth ie. invite only. Our goal is to create a small tight-knit community where we can improve multiplayer experiences by playing with the same people regularly.</p>
+            </div>
+            <div class="vr"></div>
+            <div class="side_block">
+                <h1>STAFF TEAM<span class="contact_button"><a href="https://discord.gg/hv4xfxj" target="_blank">Contact us</a></span></h1>
+                <div class="staff_section">
+                    <div class="staff">
+                        <img src="./assets/img/polygonica.jpg">
+                        <h2>Polygonica</h2>
+                    </div>
+                    <div class="staff">
+                        <img src="./assets/game_bgs/overwatch.png">
+                        <h2>Fierce</h2>
+                    </div>
+                    <div class="staff">
+                        <img src="./assets/img/rize.jpg">
+                        <h2>rizE</h2>
+                    </div>
+                    <div class="staff">
+                        <img src="./assets/game_bgs/overwatch.png">
+                        <h2>Jed</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+<!--
+    to finish later
+
+    <section class="content" id="gallery">
+        <h1>GALLERY</h1>
+        <div class="gallery">
+            <ul class="gallery_selection">
+                <li>PUBG</li>
+                <li>OVERWATCH</li>
+                <li>POE</li>
+            </ul>
+            <div class="current_image">
+                <i id="left" class="fas fa-chevron-left"></i>
+                <i id="right" class="fas fa-chevron-right"></i>
+                <img src="assets/game_bgs/overwatch.png" /></div>
+            <div class="gallery_scrolling">
+                <div class="item"></div>
+                <div class="item"></div>
+
+                <div class="item"></div>
+
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+
+            </div>
+        </div>
+    </section>
+-->
+
+    
+    
+    
+    
+    <!-- To top button, and javascript -->
+    <button onclick="topFunction()" id="btnTop" title="To top">
+    <i class="fas fa-arrow-up"></i>    
+    </button>
+</body>
+<!-- Footer area -->
+<footer>
+    <div class="footer_wrapper">
+        <span style="float: center">
+        <p class="bottom_text">Designed by <a href="http://sadiwali.com/" style="cursor: pointer;">Sadi Wali</a>for GAMEBOYS. 2018 <br> GAMEBOYS is not affiliated with Nintendo.</p>
+      </span>
+    </div>
+</footer>
+
+</html>
