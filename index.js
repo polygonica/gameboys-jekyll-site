@@ -82,14 +82,6 @@ function startUp() {
     // show cover page initially
     showBlockA();
 
-    // animations for cover page characters
-    $('.game_list_item').mouseover(function (what) {
-        $('#' + what.currentTarget.innerHTML.toLowerCase().replace(/ /g, "")).css('transform', "translateY(-10px)");
-    });
-
-    $('.game_list_item').mouseleave(function (what) {
-        $('#' + what.currentTarget.innerHTML.toLowerCase().replace(/ /g, "")).css('transform', "translateY(0)");
-    });
 }
 
 function setupStreamPage() {
@@ -125,11 +117,16 @@ function setupStreamPage() {
                         if (i == 0) {
                             // the first streamer gets the preview
                             this.firstStream = res_json.streams[i];
-                            setTimeout(() => {
-                                showTwitchBox(this.firstStream);
-                            }, 000, setTimeout(function () {
+                            // this constant for screen width must be changed in css @media section also
+                            if (screen.width > 768) {
+                                setTimeout(() => {
+                                    showTwitchBox(this.firstStream);
+                                }, 000, setTimeout(function () {
+                                    hideTwitchBox();
+                                }, 4000));
+                            } else {
                                 hideTwitchBox();
-                            }, 4000));
+                            }
                             // the first streamer also gets the big box
                             $('.block2 #streamer_title').html(name + " streaming " + game);
 

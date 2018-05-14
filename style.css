@@ -22,6 +22,51 @@
     --p5: #C0BA96;
 }
 
+@charset "UTF-8";
+
+@font-face {
+    font-family: "untitled-font-1";
+    src: url("assets/fonts/untitled-font-1.eot");
+    src: url("assets/fonts/untitled-font-1.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/untitled-font-1.woff") format("woff"),
+    url("assets/fonts/untitled-font-1.ttf") format("truetype"),
+    url("assets/fonts/untitled-font-1.svg#untitled-font-1") format("svg");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+[data-icon]:before {
+    font-family: "untitled-font-1" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: "untitled-font-1" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-short-logo:before {
+    content: "\61";
+}
+
+
 html,
 body {
     margin: 0;
@@ -214,7 +259,7 @@ header {
     bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
-    
+
 }
 
 .block2 .more_streamers .streamer {
@@ -649,6 +694,7 @@ input[type=submit]:hover {
     margin: 0px;
     padding: 0px;
     z-index: 1;
+    overflow-x: hidden;
 }
 
 .gradient {
@@ -712,6 +758,7 @@ input[type=submit]:hover {
 }
 
 .contact_button {
+    margin-top: 4px;
     float: right;
     background-color: var(--p4);
     color: var(--p1);
@@ -1283,7 +1330,7 @@ section:nth-child(even) {
 }
 
 .half_content {
-    padding: 0
+    padding: 0;
 }
 
 .block_wrapper {
@@ -1372,24 +1419,75 @@ section:nth-child(even) {
         width: 300px;
         font-size: 0.6em;
     }
-    
+
     .streaming #video_box {
         height: 50.6vw;
         width: 90vw;
         margin-top: 60px;
     }
-    
+
     .streaming .more_streamers {
         position: absolute;
         bottom: 0px;
-        display: 
+        width: 100%;
+    }
+
+    .block_wrapper {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .half_content .side_block {
+        width: 100%;
+    }
+
+    .half_content .vr {
+        display: none;
+    }
+
+
+
+    .staff_section {
+        margin: 30px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .staff {
+        margin-right: 0px;
+        margin-bottom: 20px;
+        outline: none;
+    }
+
+    .staff:nth-child(4) {}
+
+    .staff img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: white;
+        outline: none;
+        border: none;
+        object-fit: cover;
+    }
+
+    .staff h2 {
+        padding: 0;
+        margin: 5px 0px;
+        color: var(--p2);
+        font-weight: normal;
+        font-size: 0.8em;
+        text-align: center;
     }
     
-    .streaming .more_streamers h1 {
-        
+    #btnTop {
+        bottom: 80px;
     }
-    
-    
+
 
 }
 
