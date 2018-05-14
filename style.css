@@ -6,7 +6,7 @@
 /* Here you can find the color scheme variables. You may not need all of them */
 
 :root {
-    --darkest: rgb(77, 77, 77);
+    --darkest: rgb(35, 32, 41);
     --darker: #000000;
     --dark: #5e796f;
     --light: #c1c1c1;
@@ -197,15 +197,29 @@ header {
 
 .block2 .more_streamers {
     margin: 0;
-    position: relative;
+    position: absolute;
+    bottom: 0px;
+    background-color: var(--darkest);
     width: 100%;
     height: 100px;
     display: flex;
     flex-flow: row;
-    margin: 0 20px;
+    margin: 0;
+    padding: 0 20px;
+    overflow-x: auto;
+}
+
+.block2 .more_streamers_scroll #desc {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    
 }
 
 .block2 .more_streamers .streamer {
+    flex-grow: 0;
+    flex-shrink: 0;
     position: relative;
     width: 160px;
     height: 90px;
@@ -1349,6 +1363,42 @@ section:nth-child(even) {
 
 
 /* Styling for mobile views */
+
+@media only screen and (max-width: 768px) {
+    .games .games_item {
+        width: 90vw;
+    }
+    .join_button {
+        width: 300px;
+        font-size: 0.6em;
+    }
+    
+    .streaming #video_box {
+        height: 50.6vw;
+        width: 90vw;
+        margin-top: 60px;
+    }
+    
+    .streaming .more_streamers {
+        position: absolute;
+        bottom: 0px;
+        display: 
+    }
+    
+    .streaming .more_streamers h1 {
+        
+    }
+    
+    
+
+}
+
+
+
+
+
+
+
 
 /* All keyframes used */
 

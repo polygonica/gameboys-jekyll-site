@@ -11,6 +11,25 @@
     <script src="http://player.twitch.tv/js/embed/v1.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
     <script src="index.js"></script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- for ICONS -->
 </head>
 
@@ -22,7 +41,7 @@
                 <li><a onclick="moveToSection(event);" href="#cover_img"><i class="fas fa-home"></i></a></li>
                 <li><a onclick="moveToSection(event);" href="#home">about us</a></li>
                 <li><a href="https://discord.gg/hv4xfxj" target="_blank">Contact us</a></li>
-<!--                <li><a onclick="moveToSection(event);" href="#gallery">Gallery</a></li>-->
+                <!--                <li><a onclick="moveToSection(event);" href="#gallery">Gallery</a></li>-->
                 <li><a href="https://discord.gg/hv4xfxj" target="_blank">Discord</a></li>
                 <span id="external_links">
           </span>
@@ -90,14 +109,16 @@
             <div class="streaming">
                 <div id="video_box"></div>
                 <h1 id="streamer_title"></h1>
-                <div class="more_streamers">
-                    <h1>Faveourite<br> &nbsp; &nbsp; Channels:</h1>
-                    <!--
+                <div class="more_streamers_scroll">
+                    <h1 id="desc">Faveourite Channels:</h1>
+                    <div class="more_streamers">
+                        <!--
               <div class="streamer" onclick="selectStreamer('shroud', 'PUBG');">
                   <h1>Shroud</h1>
                   <div class="preview"></div>
               </div>
               -->
+                    </div>
                 </div>
             </div>
             <div class="not_streaming">
@@ -136,12 +157,12 @@
             </div>
         </div>
     </section>
-    
-    
-    
-    
-    
-<!--
+
+
+
+
+
+    <!--
     to finish later
 
     <section class="content" id="gallery">
@@ -190,10 +211,10 @@
     </section>
 -->
 
-    
-    
-    
-    
+
+
+
+
     <!-- To top button, and javascript -->
     <button onclick="topFunction()" id="btnTop" title="To top">
     <i class="fas fa-arrow-up"></i>    
