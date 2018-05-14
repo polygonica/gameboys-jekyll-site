@@ -62,6 +62,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-short-logo {
+    pointer-events: none;
+}
+
 .icon-short-logo:before {
     content: "\61";
 }
@@ -130,53 +134,6 @@ section ::selection {
 
 
 /* the nav bar sticks to the top */
-
-.sticky {
-    background: var(--p1);
-    height: 45px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.1s ease;
-    padding: 0 10px;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
-    z-index: 3;
-}
-
-.sticky ul li a {
-    color: var(--p3);
-    z-index: 3;
-}
-
-.sticky .dropbtn {
-    color: white;
-}
-
-.sticky .dropdown-content {
-    margin-top: 0px;
-}
-
-
-/* Main nav bar styling */
-
-nav ul {
-    float: left;
-    margin: 0;
-    padding: 0;
-    display: flex;
-
-}
-
-.selected_nav {
-    background-color: gray;
-}
-
-header {
-    position: relative;
-    z-index: 10;
-}
 
 .block1 {
     position: absolute;
@@ -308,6 +265,22 @@ header {
     font-weight: normal;
 }
 
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.selected_nav {
+    background-color: gray;
+}
+
+header {
+    position: relative;
+    z-index: 10;
+}
+
 nav ul li {
     list-style: none;
     animation-name: linkup;
@@ -340,6 +313,35 @@ nav ul li a:hover,
     background-color: var(--p3);
     transition: all ease 0.1s;
 }
+
+.sticky {
+    background: var(--p1);
+    height: 45px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.1s ease;
+    padding: 0 10px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.sticky ul li a {
+    color: var(--p3);
+    z-index: 3;
+}
+
+.sticky .dropbtn {
+    color: white;
+}
+
+.sticky .dropdown-content {
+    margin-top: 0px;
+}
+
+
 
 
 /* Twitch box */
@@ -1483,11 +1485,27 @@ section:nth-child(even) {
         font-size: 0.8em;
         text-align: center;
     }
-    
+
     #btnTop {
         bottom: 80px;
     }
 
+    nav ul li {
+        list-style: none;
+        animation-name: none;
+    }
+
+    nav ul li:hover,
+    .dropdown:hover {
+        animation-name: none;
+    }
+
+    nav ul li a:hover,
+    .dropbtn:hover {
+        color: var(--p3);
+        background-color: inherit;
+        transition: none;
+    }
 
 }
 

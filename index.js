@@ -247,10 +247,11 @@ function showBlockB() {
  */
 function moveToSection(event) {
     event.preventDefault();
+    
     hash = event.path[0].hash;
     // scroll to it
     $("html, body").animate({
-        scrollTop: $(hash).offset().top
+        scrollTop: $(hash).offset().top - 30 // some extra space
     }, 400);
 
     window.location.hash = hash;
