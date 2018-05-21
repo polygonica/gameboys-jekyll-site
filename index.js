@@ -47,7 +47,7 @@ $(window).resize(function () {
  *  Start up functions
  */
 function startUp() {
-    streamers = ["fierceone", "shroud", "kratFOZ"];
+    streamers = ["fierceone", "kratFOZ"];
     btnTop = document.getElementById("btnTop");
     topbar = document.getElementById("topnav");
     toast_box = document.getElementsByClassName("toast_box")[0];
