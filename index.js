@@ -14,6 +14,7 @@ var toast_box; // the toast box
 var version = 2.0;
 var twitchPlayer; // the twitch embedded player
 var streamers;
+var live_streamers;
 
 var once = false;
 
@@ -88,7 +89,7 @@ function setupStreamPage() {
     var client_id = "foqei49l7ynm0699ra18fgjf2e3dgg";
     var xmlhttp = new XMLHttpRequest();
     var url = "https://api.twitch.tv/kraken/streams/?client_id=" + client_id + "&channel=";
-
+    live_streamers = [];
     for (var i = 0; i < streamers.length; i++) {
         // build the URL to request
         url += streamers[i] + ",";
@@ -100,6 +101,7 @@ function setupStreamPage() {
 
             // read json
             var res_json = JSON.parse(this.responseText);
+            console.log(res_json);
             if (res_json.streams.length > 0) {
                 // at least one streamer live
 
@@ -113,6 +115,7 @@ function setupStreamPage() {
 
                         var name = res_json.streams[i].channel.name;
                         var game = res_json.streams[i].game;
+                        live_streamers.push(name);
 
                         if (i == 0) {
                             // the first streamer gets the preview
@@ -168,11 +171,47 @@ function setupStreamPage() {
                     }());
                 }
 
-                if (res_json.streams.length == 1) {
-                    // if only one element
-                    $('.more_streamers').css('display', 'none');
+                //                if (res_json.streams.length == 1) {
+                //                    // if only one element
+                //                    $('.more_streamers').css('display', 'none');
+                //                }
+                var offline_streamers = [];
+
+                for (var i = 0; i < streamers.length; i++) {
+                    var found = false;
+                    for (var j = 0; j < live_streamers.length; j++) {
+                        if (streamers[i].toLowerCase() == live_streamers[j].toLowerCase()) {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found) {
+                        offline_streamers.push(streamers[i])
+                    }
                 }
 
+                // have list of offline streamers
+                // all other streamers get in list
+
+                for (var i = 0; i < offline_streamers.length; i++) {
+
+                    var streamer_element = document.createElement("div");
+
+
+                    streamer_element.appendChild(document.createElement("h1"));
+                    var preview_element = document.createElement("div");
+                    preview_element.classList.add("preview");
+                    streamer_element.appendChild(preview_element);
+                    streamer_element.classList.add("streamer");
+                    // set channel preview image
+
+                    streamer_element.getElementsByClassName("preview")[0].style.backgroundImage = "url()";
+                    streamer_element.getElementsByTagName("h1")[0].innerHTML = offline_streamers[i] + "<br> (offline)";
+                    document.getElementsByClassName("more_streamers")[0].appendChild(streamer_element);
+                }
+
+                
             } else {
                 // no streamers live
                 $('.block2 .streaming').css('display', 'none');
@@ -180,11 +219,11 @@ function setupStreamPage() {
                 return false;
             }
         }
-    };
+
+    }
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
-
 
 
 function setupScrollPos() {
@@ -247,7 +286,7 @@ function showBlockB() {
  */
 function moveToSection(event) {
     event.preventDefault();
-    
+
     hash = event.path[0].hash;
     // scroll to it
     $("html, body").animate({
